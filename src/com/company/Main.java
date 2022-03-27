@@ -186,6 +186,16 @@ class Card3 {
     }
 }
 
+class Dock {
+
+    String[] correct_suits = {"diamonds","clubs", "hearts", "spades"};
+    String[] correct_ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+
+
+    private Dock(){}
+
+}
+
 
 public class Main {
 
