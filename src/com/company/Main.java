@@ -191,8 +191,16 @@ class Dock {
     String[] correct_suits = {"diamonds","clubs", "hearts", "spades"};
     String[] correct_ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
 
+    private static Dock INSTANCE;
 
-    private Dock(){}
+    private Dock() {}
+
+    public static Dock getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new Dock();
+        }
+        return INSTANCE;
+    }
 
 }
 
