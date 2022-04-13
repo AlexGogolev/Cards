@@ -204,7 +204,7 @@ class Deck {
             String[] correct_ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
             for (String s : correct_suits) {
                 for (String r: correct_ranks) {
-                    dock_.add(new Card2(s, r));
+                    deck_.add(new Card2(s, r));
                 }
             }
         }
