@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+
 class Card1 {
     // вариант 2а
     public int suit;
@@ -186,21 +188,31 @@ class Card3 {
     }
 }
 
-class Dock {
+class Deck {
 
-    String[] correct_suits = {"diamonds","clubs", "hearts", "spades"};
-    String[] correct_ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+    public static final ArrayList<Card2> deck_ = new ArrayList<Card2>(); // тут будем хранить саму колоду
 
-    private static Dock INSTANCE;
+    private static Deck INSTANCE;
 
-    private Dock() {}
+    private Deck() {}
 
-    public static Dock getInstance() {
+    public static Deck getInstance() {
         if (INSTANCE == null) {
-            INSTANCE = new Dock();
+            INSTANCE = new Deck();
+            // тут создаём колоду - нужно сгенерировать все масти и ранки
+            String[] correct_suits = {"diamonds","clubs", "hearts", "spades"};
+            String[] correct_ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+            for (String s : correct_suits) {
+                for (String r: correct_ranks) {
+                    dock_.add(new Card2(s, r));
+                }
+            }
         }
         return INSTANCE;
     }
+
+    public
+
 
 }
 
@@ -208,18 +220,23 @@ class Dock {
 public class Main {
 
     public static void main(String[] args) {
-        //System.out.println("Hello!");
-        Card3 card3_1 = new Card3(0, 1);
-        System.out.println("card3_1.rank: " + card3_1.getRank());
-        Card3 card3_2 = new Card3(2, 10);
-        System.out.println("card3_2.rank: " + card3_2.getRank());
-        Card3 card3_3 = new Card3(0);
-        System.out.println("card3_3.rank: " + card3_3.getRank());
+//        //System.out.println("Hello!");
+//        Card3 card3_1 = new Card3(0, 1);
+//        System.out.println("card3_1.rank: " + card3_1.getRank());
+//        Card3 card3_2 = new Card3(2, 10);
+//        System.out.println("card3_2.rank: " + card3_2.getRank());
+//        Card3 card3_3 = new Card3(0);
+//        System.out.println("card3_3.rank: " + card3_3.getRank());
 
 //        Card2 card2_1 = new Card2(1,3);
 //        //System.out.println(card2_1);
 //        Card2 card2_2 = new Card2(1,3);
 //        boolean a = (card2_1.equals(card2_2));
 //        System.out.println(a);
+
+        Dock dock1 = Dock.getInstance();
+
+        byte a = 0;
+
     }
 }
