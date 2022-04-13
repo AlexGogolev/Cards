@@ -8,6 +8,9 @@ class Card1 {
     public int rank;
 }
 
+/**
+ * Основной класс карты
+ */
 class Card2 {
     //вариант 2b
     String[] correct_suits = {"diamonds","clubs", "hearts", "spades"};
