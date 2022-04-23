@@ -28,6 +28,12 @@ class Card2 {
         }
     }
 
+    /**
+     * Метод, который проверяет - принадлежит ли карта колоде
+     * @param rank
+     * @param suit
+     * @return
+     */
     public boolean card_is_correct(Object rank, Object suit){
         String rank_str = String.valueOf(rank);
         String suit_str = String.valueOf(suit);
@@ -47,6 +53,7 @@ class Card2 {
 
         return (rank_cor == true && suit_cor == true);
     }
+
 
     public byte compare_similar_cards(Object obj){
         if (obj == null){
@@ -113,6 +120,12 @@ class Card2 {
         return -1;
     }
 
+    /**
+     * Метод проверки - присутствует ли элемент в массиве
+     * @param arr - исходный массив
+     * @param item - предполагаемый элемент в массиве
+     * @return boolean
+     */
     boolean check(String[] arr, String item){
         for (String i : arr) {
            if (item == i){
@@ -193,7 +206,7 @@ class Card3 {
 
 class Deck {
 
-    public static final ArrayList<Card2> deck_ = new ArrayList<Card2>(); // тут будем хранить саму колоду
+    public ArrayList<Card2> deck_ = new ArrayList<Card2>(); // тут будем хранить саму колоду
 
     private static Deck INSTANCE;
 
@@ -214,7 +227,7 @@ class Deck {
         return INSTANCE;
     }
 
-    public
+    //public
 
 
 }
@@ -237,7 +250,7 @@ public class Main {
 //        boolean a = (card2_1.equals(card2_2));
 //        System.out.println(a);
 
-        Dock dock1 = Dock.getInstance();
+        Deck deck1 = Deck.getInstance();
 
         byte a = 0;
 
