@@ -206,7 +206,7 @@ class Card3 {
 
 class Deck {
 
-    public ArrayList<Card2> deck_ = new ArrayList<Card2>(); // тут будем хранить саму колоду
+    public static ArrayList<Card2> deck_ = new ArrayList<Card2>(); // тут будем хранить саму колоду
 
     private static Deck INSTANCE;
 
