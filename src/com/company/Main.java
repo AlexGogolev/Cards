@@ -256,7 +256,7 @@ class Deck {
      * Получение карты из колоды (получаем первую карту в колоде (лучше предварительно перетасовать колоду))
      * @return
      */
-    public Card2 get_card_from_deck(){
+    public static Card2 get_card_from_deck(){
         return Deck.deck_.get(0);
     }
 
