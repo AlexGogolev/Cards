@@ -1,6 +1,9 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.io.*;
+import java.util.*;
 
 class Card1 {
     // вариант 2а
@@ -231,9 +234,12 @@ class Deck {
     public static Card2 get_random_card_from_deck(){
         int index = (int)(Math.random() * Deck.deck_.size());
         return Deck.deck_.get(index);
-
     }
 
+    public static ArrayList<Card2> shuffle_deck(){
+        Collections.shuffle(deck_);
+        return deck_;
+    }
 
 }
 
@@ -256,7 +262,10 @@ public class Main {
 //        System.out.println(a);
 
         Deck deck1 = Deck.getInstance();
-
+        Card2 rnd_card = Deck.get_random_card_from_deck();
+        System.out.println(rnd_card);
+        Deck.shuffle_deck();
+//        Deck.shuffle_deck();
         byte a = 0;
 
     }
