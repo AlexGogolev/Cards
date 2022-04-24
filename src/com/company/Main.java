@@ -1,8 +1,6 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.io.*;
 import java.util.*;
 
 class Card1 {
@@ -195,14 +193,7 @@ class Card2 implements Comparable<Card2>{
         return this.compare_different_cards(o);
     }
 
-    /**
-     * Получение карты из колоды (получаем первую карту в колоде (лучше предварительно перетасовать колоду))
-     * @return
-     */
-    public Card2 get_card_from_deck(){
 
-        return new Card2();
-    }
 }
 
 class Card3 {
@@ -261,6 +252,13 @@ class Deck {
         return INSTANCE;
     }
 
+    /**
+     * Получение карты из колоды (получаем первую карту в колоде (лучше предварительно перетасовать колоду))
+     * @return
+     */
+    public Card2 get_card_from_deck(){
+        return Deck.deck_.get(0);
+    }
 
     public static Card2 get_random_card_from_deck(){
         int index = (int)(Math.random() * Deck.deck_.size());
