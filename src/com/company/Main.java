@@ -57,7 +57,11 @@ class Card2 implements Comparable<Card2>{
         return (rank_cor == true && suit_cor == true);
     }
 
-
+    /**
+     * Сравнение карт одной масти
+     * @param obj
+     * @return
+     */
     public byte compare_similar_cards(Object obj){
         if (obj == null){
             return -1;
@@ -65,6 +69,7 @@ class Card2 implements Comparable<Card2>{
 
         final Card2 other = (Card2) obj;
 
+        //если suit одной карты не соответствует suit другой
         if (other.getSuit() != this.getSuit()) {
             return -1;
         }
@@ -82,6 +87,11 @@ class Card2 implements Comparable<Card2>{
         return -1;
     }
 
+    /**
+     * Сравнение карт разных мастей
+     * @param obj
+     * @return
+     */
     public byte compare_different_cards(Object obj){
         //clubs < diamonds < spades < hearts
         if (obj == null){
@@ -93,8 +103,8 @@ class Card2 implements Comparable<Card2>{
             return -1;
         }
 
-        int index_this = this.get_index_item_in_array(correct_suits, this.getSuit());
-        int index_other = this.get_index_item_in_array(correct_suits, other.getSuit());
+        int index_this = this.get_index_item_in_array(correct_suits, this.getSuit()); // индекс масти текущей
+        int index_other = this.get_index_item_in_array(correct_suits, other.getSuit()); // индекс масти другой
         if (index_this > index_other){
             // сначала проверяем масти
             return 1;
@@ -182,8 +192,16 @@ class Card2 implements Comparable<Card2>{
 
     @Override
     public int compareTo(Card2 o) {
-        byte a = 0;
-        return 0;
+        return this.compare_different_cards(o);
+    }
+
+    /**
+     * Получение карты из колоды (получаем первую карту в колоде (лучше предварительно перетасовать колоду))
+     * @return
+     */
+    public Card2 get_card_from_deck(){
+
+        return new Card2();
     }
 }
 
