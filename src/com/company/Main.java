@@ -227,7 +227,12 @@ class Deck {
         return INSTANCE;
     }
 
-    //public
+
+    public static Card2 get_random_card_from_deck(){
+        int index = (int)(Math.random() * Deck.deck_.size());
+        return Deck.deck_.get(index);
+
+    }
 
 
 }
