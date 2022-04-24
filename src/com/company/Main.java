@@ -14,10 +14,10 @@ class Card1 {
 /**
  * Основной класс карты
  */
-class Card2 {
+class Card2 implements Comparable<Card2>{
     //вариант 2b
-    String[] correct_suits = {"diamonds","clubs", "hearts", "spades"};
-    String[] correct_ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+    String[] correct_suits = {"diamonds","clubs", "hearts", "spades"}; //пики, червы, бубны и трефы
+    String[] correct_ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
     private String suit;
     private String rank;
 
@@ -138,10 +138,18 @@ class Card2 {
         return false;
     }
 
+    /**
+     * Получение Rank
+     * @return
+     */
     public String getRank() {
         return this.rank;
     }
 
+    /**
+     * ПОлучение масти (Suit)
+     * @return
+     */
     public String getSuit() {
         return this.suit;
     }
@@ -172,6 +180,11 @@ class Card2 {
         return hash;
     }
 
+    @Override
+    public int compareTo(Card2 o) {
+        byte a = 0;
+        return 0;
+    }
 }
 
 class Card3 {
