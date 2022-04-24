@@ -16,7 +16,7 @@ class Card1 {
  */
 class Card2 implements Comparable<Card2>{
     //вариант 2b
-    String[] correct_suits = {"diamonds","clubs", "hearts", "spades"}; //пики, червы, бубны и трефы
+    String[] correct_suits = {"diamonds","clubs", "hearts", "spades"}; //пики, червы, бубны и трефы // отсортировать
     String[] correct_ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
     private String suit;
     private String rank;
