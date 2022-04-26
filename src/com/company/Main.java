@@ -273,6 +273,19 @@ class Deck {
         return result;
     }
 
+    /**
+     * Вставка карты в колоду (с проверкой что такой карты там нет)
+     * @param card
+     * @return
+     */
+    public static boolean put_Card_to_Deck(Card2 card){
+        Deck deck = Deck.getInstance();
+
+        return false;
+
+    }
+
+
     public static ArrayList<Card2> shuffle_deck(){
         Collections.shuffle(deck_);
         return deck_;
