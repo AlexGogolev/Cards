@@ -279,8 +279,16 @@ class Deck {
      * @return
      */
     public static boolean put_Card_to_Deck(Card2 card){
-        Deck deck = Deck.getInstance();
+//        Deck deck = Deck.getInstance();
+        // нужно определить - есть ли такая карта в колоде
+        for (int i = 0; i < Deck.deck_.size(); i++) {
+            Card2 card_iter = Deck.deck_.get(i);
+            if (((card_iter.getRank()) != card.getRank()) && (card_iter.getSuit() != card.getSuit())){
+                //добавляем в колоду
+                Deck.deck_.add(card);
+            }
 
+        }
         return false;
 
     }
@@ -312,9 +320,10 @@ public class Main {
 //        System.out.println(a);
 
         Deck deck1 = Deck.getInstance();
-        Card2 rnd_card = Deck.get_random_card_from_deck();
-        System.out.println(rnd_card);
-        Deck.shuffle_deck();
+        boolean b = deck1.put_Card_to_Deck(new Card2("diamonds", "3"));
+//        Card2 rnd_card = Deck.get_random_card_from_deck();
+//        System.out.println(rnd_card);
+//        Deck.shuffle_deck();
 //        Deck.shuffle_deck();
         byte a = 0;
 
