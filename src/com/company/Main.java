@@ -258,12 +258,19 @@ class Deck {
      * @return
      */
     public static Card2 get_card_from_deck(){
-        return Deck.deck_.get(0);
+        Card2 result = Deck.deck_.get(0);
+        return Deck.deck_.remove(0);
     }
 
+    /**
+     * Получение произвольной карты из колоды
+     * @return
+     */
     public static Card2 get_random_card_from_deck(){
         int index = (int)(Math.random() * Deck.deck_.size());
-        return Deck.deck_.get(index);
+        Card2 result = Deck.deck_.get(index);
+        Deck.deck_.remove(index);
+        return result;
     }
 
     public static ArrayList<Card2> shuffle_deck(){
