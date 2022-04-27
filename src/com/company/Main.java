@@ -281,24 +281,42 @@ class Deck {
     public static boolean put_Card_to_Deck(Card2 card){
 //        Deck deck = Deck.getInstance();
         // нужно определить - есть ли такая карта в колоде
+        boolean there_is_card = false;
         for (int i = 0; i < Deck.deck_.size(); i++) {
             Card2 card_iter = Deck.deck_.get(i);
-            if (((card_iter.getRank()) != card.getRank()) && (card_iter.getSuit() != card.getSuit())){
-                //добавляем в колоду
-                Deck.deck_.add(card);
+            if (((card_iter.getRank()) == card.getRank()) && (card_iter.getSuit() == card.getSuit())){
+                // такая карта есть в колоде
+                there_is_card = true;
+                break;
             }
+        }
 
+        if (there_is_card == false) {
+            Deck.deck_.add(card);
+            return true;
         }
         return false;
-
     }
-
 
     public static ArrayList<Card2> shuffle_deck(){
         Collections.shuffle(deck_);
         return deck_;
     }
 
+    /**
+     * Проверка колоды на пустоту
+     */
+    public static boolean check_empty_deck(){
+        if (Deck.deck_.size() == 0) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "В колоде " + Deck.deck_.size() + " карт";
+    }
 }
 
 
@@ -325,6 +343,7 @@ public class Main {
 //        System.out.println(rnd_card);
 //        Deck.shuffle_deck();
 //        Deck.shuffle_deck();
+        System.out.println(deck1);
         byte a = 0;
 
     }
